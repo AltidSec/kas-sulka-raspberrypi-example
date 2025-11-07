@@ -1,33 +1,18 @@
-# kas Sulka
+# Sulka Raspberry Pi Reference
 
-This repository contains kas configuration for building Sulka, a secure Yocto Linux distribution. You can find the [Sulka meta-layer from here](https://codeberg.org/AltidSec/meta-sulka-distro).
+This project contains the Raspberry Pi 4 Sulka reference project. The project ports the hardened Sulka distro, kernel and BSP to an actual hardware.
 
-kas is a tool for configuring and managing Bitbake projects. It allows simple one-command builds with different configurations, meta-layer combinations, etc. kas documentation can be found [from here.](https://kas.readthedocs.io/en/latest/index.html)
+This integration is achieved with the `kas-sulka-raspberrypi.yml` configuration file that is added alongside the contents of [kas Sulka repository](https://codeberg.org/AltidSec/kas-sulka/). This configuration file adds the [meta-raspberrypi](https://git.yoctoproject.org/meta-raspberrypi) layer as the BSP layer and [meta-sulka-raspberrypi](https://codeberg.org/AltidSec/meta-sulka-raspberrypi) as the Sulka integration layer. In addition, the configuration sets some `local.conf` variables for Raspberry Pi, and sets the target machine as `raspberrypi4-64`.
 
-To build Sulka using kas, do the following:
+To build Sulka for the the Raspberry Pi, you build the Sulka almost the same way as usual, just add the `kas-sulka-raspberrypi.yml` to the list of configurations. The following command can be used to build the Raspberry Pi 4 image:
 
-1. Install kas:
-    ```
-    git clone https://github.com/siemens/kas
-    cd kas
-    python3 -m venv kas-venv
-    source kas-venv/bin/activate
-    pip3 install .
-    ```
+```
+kas build kas-sulka.yml:kas-sulka-raspberrypi.yml
+```
 
-1. Clone this repository:
-    ```
-    cd ..
-    git clone https://codeberg.org/AltidSec/kas-sulka.git
-    cd kas-sulka
-    ```
+You can use this repository as an example of how to take Sulka into use in your own projects. In summary, you'll need to do the following things:
 
-1. Build Sulka:
-    ```
-    kas build kas-sulka.yml
-    ```
-
-1. For advanced use, you may want to check out `kas shell` command:
-    ```
-    kas shell kas-sulka.yml -c 'bitbake -e core-image-base'
-    ```
+1. Fork the [kas Sulka repository](https://codeberg.org/AltidSec/kas-sulka/).
+1. Add your own configuration file that sets the machine & target image, configures Sulka, and adds the required meta-layers.
+1. If required, create an integration meta-layer that overrides incompatible metadata in Sulka layers.
+1. Merge changes from the upstream kas Sulka time to time to stay updated.
