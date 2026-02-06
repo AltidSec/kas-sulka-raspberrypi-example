@@ -1,14 +1,11 @@
 header:
   version: 1
-
 machine: raspberrypi4-64
-
 local_conf_header:
   60-kas-sulka-raspberrypi: |
     LICENSE_FLAGS_ACCEPTED:append = "synaptics-killswitch"
     ENABLE_UART = "1"
     RPI_USE_U_BOOT = "1"
-
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
@@ -16,5 +13,5 @@ repos:
     branch: scarthgap
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
-    tag: 0.3.0
+    tag: 0.4.0
     commit: bda603581fca473b70d69538fdfde0c556efedf7
