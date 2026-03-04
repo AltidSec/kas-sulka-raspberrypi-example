@@ -23,7 +23,7 @@ repos:
   meta-rugix:
     url: https://github.com/silitics/meta-rugix.git
     branch: scarthgap
-    commit: 2cfd51599e15d77b410590cfb64fbaa31248adbe
+    commit: 96943c77851643d249489f3e324442137420d443
     layers:
       meta-rugix-core:
       meta-rugix-rpi-uboot:
