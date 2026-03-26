@@ -6,6 +6,8 @@ local_conf_header:
     LICENSE_FLAGS_ACCEPTED:append = "synaptics-killswitch"
     ENABLE_UART = "1"
     RPI_USE_U_BOOT = "1"
+    # wic fstab update messes up the SELinux labels, so disable it
+    WIC_CREATE_EXTRA_ARGS:append = " --no-fstab-update "
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
