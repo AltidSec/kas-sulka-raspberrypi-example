@@ -15,5 +15,5 @@ repos:
     branch: scarthgap
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
-    tag: 0.5.0
+    tag: 0.5.1
     commit: b622a51f0040a3db915d9a0866dbc78da4e3a637
