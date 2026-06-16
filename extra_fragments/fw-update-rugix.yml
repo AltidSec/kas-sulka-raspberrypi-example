@@ -2,10 +2,10 @@ header:
   version: 1
 target:
   - core-image-base
-  - update-bundle-base
 local_conf_header:
   60-kas-sulka-rugix: |
     DISTRO_FEATURES:append = " rugix "
+    IMAGE_FSTYPES:append = " rugixb rugixb.hash"
     # Install rugix packages
     IMAGE_INSTALL:append = " rugix-ctrl rugix-bootstrapping-conf rugix-system-conf "
     # Install disk utilities for rugix bootstrap
@@ -13,17 +13,11 @@ local_conf_header:
     # Install packages to allow modifying u-boot environment
     IMAGE_INSTALL:append = " u-boot-env libubootenv-bin "
     WKS_FILE = "sdimage-rugix-rpi-uboot.wks.in"
-    PREFERRED_VERSION_rugix-ctrl = "1.0.0"
-    PREFERRED_VERSION_rugix-bundler-native = "1.0.0"
 repos:
-  meta-lts-mixins-rust:
-    url: "https://git.yoctoproject.org/meta-lts-mixins"
-    branch: scarthgap/rust
-    commit: c19b6da5a3afd3c892b3b1b44983e993ac6d5308
   meta-rugix:
     url: https://github.com/silitics/meta-rugix.git
-    branch: scarthgap
-    commit: 96943c77851643d249489f3e324442137420d443
+    branch: wrynose
+    commit: caa5f1929b79358806038223be9734e2f27d53e4
     layers:
       meta-rugix-core:
       meta-rugix-rpi-uboot:
