@@ -1,6 +1,6 @@
 # Sulka Raspberry Pi Reference
 
-This project contains the Raspberry Pi 4 Sulka reference project. The project ports the hardened Sulka distro, kernel and BSP to an actual hardware.
+This project contains the Raspberry Pi 4 Sulka reference project. The project ports the hardened Sulka distro, kernel and BSP to an actual hardware. The project supports only the default Sulka init manager, systemd.
 
 This integration is achieved with the `kas-sulka-raspberrypi.yml` configuration file that is added alongside the contents of [kas Sulka repository](https://codeberg.org/AltidSec/kas-sulka/). This configuration file adds the [meta-raspberrypi](https://git.yoctoproject.org/meta-raspberrypi) layer as the BSP layer and [meta-sulka-raspberrypi](https://codeberg.org/AltidSec/meta-sulka-raspberrypi) as the Sulka integration layer. In addition, the configuration sets some `local.conf` variables for Raspberry Pi, and sets the target machine as `raspberrypi4-64`.
 
