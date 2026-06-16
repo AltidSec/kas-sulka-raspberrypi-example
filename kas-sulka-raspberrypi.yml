@@ -8,11 +8,12 @@ local_conf_header:
     RPI_USE_U_BOOT = "1"
     # wic fstab update messes up the SELinux labels, so disable it
     WIC_CREATE_EXTRA_ARGS:append = " --no-fstab-update "
+    PREFERRED_VERSION_linux-raspberrypi = "6.18.%"
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
-    commit: aaf976a665daa7e520545908adef8a0e9410b57f
-    branch: scarthgap
+    commit: 0c76b0feadbe2afa4cec4cd497636e94eca30ec3
+    branch: master
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
     tag: 0.5.1
