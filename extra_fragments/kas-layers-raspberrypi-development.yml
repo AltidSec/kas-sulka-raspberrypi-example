@@ -1,0 +1,8 @@
+header:
+  version: 1
+
+repos:
+  meta-sulka-raspberrypi:
+    tag: ""
+    commit: ""
+    branch: wrynose-next
