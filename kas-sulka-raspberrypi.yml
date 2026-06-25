@@ -16,5 +16,5 @@ repos:
     branch: master
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
-    tag: 0.5.1
-    commit: b622a51f0040a3db915d9a0866dbc78da4e3a637
+    tag: 1.0.0
+    commit: 60b55062fb559a1f3c4d4029bca6f499f339c708
