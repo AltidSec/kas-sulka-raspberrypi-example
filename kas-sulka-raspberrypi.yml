@@ -12,7 +12,7 @@ local_conf_header:
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
-    commit: 0c76b0feadbe2afa4cec4cd497636e94eca30ec3
+    commit: 6d81e22c38ce5ec10ea90b4d938be3044222447d
     branch: master
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git

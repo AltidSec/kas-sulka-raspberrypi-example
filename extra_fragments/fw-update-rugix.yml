@@ -17,7 +17,7 @@ repos:
   meta-rugix:
     url: https://github.com/silitics/meta-rugix.git
     branch: wrynose
-    commit: caa5f1929b79358806038223be9734e2f27d53e4
+    commit: be382e6a9bc32a80e26a16e2637a088ed8526fa8
     layers:
       meta-rugix-core:
       meta-rugix-rpi-uboot:
