@@ -13,7 +13,7 @@ repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
     commit: 6d81e22c38ce5ec10ea90b4d938be3044222447d
-    branch: master
+    branch: wrynose
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
     tag: 1.0.0
