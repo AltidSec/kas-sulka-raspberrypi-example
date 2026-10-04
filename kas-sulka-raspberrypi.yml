@@ -16,5 +16,5 @@ repos:
     branch: wrynose
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
-    tag: 1.0.0
-    commit: 60b55062fb559a1f3c4d4029bca6f499f339c708
+    tag: 1.1.0
+    commit: 7157b16e412e969ef0102eeaac35af4a907561ce
