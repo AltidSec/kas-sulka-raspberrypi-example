@@ -56,6 +56,13 @@ This repository is meant to be read as a template. To take Sulka into your own p
 1. If required, create an integration meta-layer that overrides incompatible metadata in the Sulka layers, the way `meta-sulka-raspberrypi` does for the Pi.
 1. Merge changes from the upstream kas Sulka from time to time to stay updated.
 
+## Limitations
+
+This reference project has the following security limitations:
+
+- FIT boot is not implemented, meaning the there is no secure boot. This in practice means that the root hash of the dm-verity is not protected, and replacing things like bootloader or kernel image is trivial.
+- Rugix firmware update example has some additional security features disabled. You can find the list from [the documentation](https://altidsec.com/sulka/documentation/firmware-update.html#limitations-modifications-to-sulka).
+
 ## Documentation
 
 To get started with Sulka, read [the quick start guide](https://altidsec.com/sulka/documentation/quick-start.html).
