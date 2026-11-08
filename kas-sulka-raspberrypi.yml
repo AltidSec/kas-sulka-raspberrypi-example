@@ -6,6 +6,9 @@ local_conf_header:
     LICENSE_FLAGS_ACCEPTED:append = "synaptics-killswitch"
     ENABLE_UART = "1"
     RPI_USE_U_BOOT = "1"
+    WKS_FILE = "sdimage-sulka-raspberrypi.wks.in"
+    RPI_EXTRA_IMAGE_BOOT_FILES = "${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.bin;${KERNEL_IMAGETYPE} u-boot.bin;${SDIMG_KERNELIMAGE} boot.scr"
+    CMDLINE_ROOT_FSTYPE = "rootfstype=erofs"
     # wic fstab update messes up the SELinux labels, so disable it
     WIC_CREATE_EXTRA_ARGS:append = " --no-fstab-update "
     PREFERRED_VERSION_linux-raspberrypi = "6.18.%"
