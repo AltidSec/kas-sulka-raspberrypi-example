@@ -5,14 +5,22 @@ target:
 local_conf_header:
   60-kas-sulka-rugix: |
     DISTRO_FEATURES:append = " rugix "
-    IMAGE_FSTYPES:append = " rugixb rugixb.hash"
+    IMAGE_FSTYPES:append:pn-core-image-base = " rugixb rugixb.hash"
     # Install rugix packages
     IMAGE_INSTALL:append = " rugix-ctrl rugix-bootstrapping-conf rugix-system-conf "
     # Install disk utilities for rugix bootstrap
     IMAGE_INSTALL:append = " util-linux-sfdisk e2fsprogs  "
     # Install packages to allow modifying u-boot environment
     IMAGE_INSTALL:append = " u-boot-env libubootenv-bin "
-    WKS_FILE = "sdimage-rugix-rpi-uboot.wks.in"
+    # meta-rugix-rpi-uboot sets WKS_FILE:rpi, which takes precedence over
+    # WKS_FILE, so override it with the Sulka layout from meta-sulka-raspberrypi
+    WKS_FILE:rpi = "sdimage-sulka-rugix-raspberrypi.wks.in"
+    # The kernel is loaded from the Rugix boot slots, so leave it out of the
+    # config partition
+    RPI_EXTRA_IMAGE_BOOT_FILES = "u-boot.bin;${SDIMG_KERNELIMAGE} boot.scr"
+    RUGIX_SLOTS:rpi = "boot:2 system:4"
+    IMAGE_BOOT_FILES_label-boot-a = "${@'${KERNEL_IMAGETYPE}-initramfs-${MACHINE}.bin;${KERNEL_IMAGETYPE}' if d.getVar('INITRAMFS_IMAGE_BUNDLE') == '1' else '${KERNEL_IMAGETYPE}'}"
+    WICVARS:append = " IMAGE_BOOT_FILES_label-boot-a"
 repos:
   meta-rugix:
     url: https://github.com/silitics/meta-rugix.git
