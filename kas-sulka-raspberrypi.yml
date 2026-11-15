@@ -15,7 +15,7 @@ local_conf_header:
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
-    commit: 6d81e22c38ce5ec10ea90b4d938be3044222447d
+    commit: 919588393f41b48cb6c5d832aa35e58a19b6762d
     branch: wrynose
   meta-sulka-raspberrypi:
     url: https://codeberg.org/AltidSec/meta-sulka-raspberrypi.git
